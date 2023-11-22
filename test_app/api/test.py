@@ -2,7 +2,7 @@ import frappe
 from frappe.exceptions import DoesNotExistError
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def add_to_db(data):
     try:
         record = frappe.new_doc("test_doc")
